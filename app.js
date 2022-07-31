@@ -1,0 +1,10 @@
+const express = require('express')
+const app = express()
+const news=require('./router/news')
+require('./db/mongoos')
+const posts = require('./router/poosts')
+
+app.use(news)
+app.use(posts)
+app.use(express.json())
+app.listen(3000,()=>{console.log('Server is running')})
